@@ -1,3 +1,5 @@
+#Knn( K-nearest neighbor) classifier implementation in R 
+#Author: Hussein Alrubaye
 rm(list = ls())
 diabetes <- read.table(file.choose(), sep = ',' )
 diabetes<- diabetes[-1,]; ## remove header out 768 rows
