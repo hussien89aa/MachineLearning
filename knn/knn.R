@@ -15,7 +15,7 @@ diabetes.norm <-  as.data.frame(lapply(diabetes.numeric, data_norm))
 # find train and test range
 cols<- ncol(diabetes)
 rows<- nrow(diabetes)
-train.rows<- as.integer(cols*0.7*100) # 70% of data as training and 30% as testing
+train.rows<- as.integer(rows*0.7) # 70% of data as training and 30% as testing
 
 # split data to train and test
 xtrain <- diabetes.norm[1:train.rows,1:(cols-1)]
@@ -39,3 +39,4 @@ print(fMeasure)
 # new data
 diabetes_pred<-merge(diabetes[(train.rows+1):rows,1:(cols-1)] ,ytest_pred, all = TRUE) 
 View(diabetes_pred)
+
